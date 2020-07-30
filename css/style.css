@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
+    --dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    max-width: 1440px;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 610px;
+    grid-template-rows: auto;
+}
+
+.container .content {
+    background-image: url(../images/bg-pattern-desktop.svg), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding: 65px 170px 0px 170px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.container .content .logo {
+    margin-bottom: 140px;
+    padding-left: 10px;
+}
+
+.container .content .text {
+    padding-right: 65px;
+}
+
+.container .content .text h1 {
+    margin-bottom: 20px;
+    padding-left: 5px;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 25px;
+    line-height: 1.1;
+    color: var(--dark-grayish-red);
+}
+
+.container .content .text h1 span {
+    font-weight: 300;
+    color: var(--desaturated-red);
+}
+
+.container .content .text p {
+    min-width: 425px;
+    margin-bottom: 40px;
+    padding-right: 13px;
+    padding-left: 5px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--desaturated-red);
+}
+
+.container .content form {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container .content form > input {
+    background-color: transparent;
+    border: 1px solid #DADCE0;
+    border-radius: 40px;
+    outline: none;
+    width: 100%;
+    padding: 20px 30px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--desaturated-red);
+    transition: all 120ms ease-in-out;
+}
+
+.container .content form > button {
+    min-width: 100px;
+    padding: 18px;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0px 15px 15px rgba(206, 151, 151, 0.4);
+    outline: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) scale(1);
+    transform-origin: 95% 45%;
+    transition: all 50ms ease-in-out;
+}
+
+.container .content form > button:hover {
+    background-image: linear-gradient(135deg, hsl(0, 71%, 93%), hsl(0, 80%, 86%));
+    box-shadow: 0px 15px 20px rgba(206, 151, 151, 0.7);
+    transform: translateY(-50%) scale(1.05);
+    /* right: 2px; */
+}
+
+.container .content form .icon {
+    position: absolute;
+    top: 50%;
+    right: 120px;
+    transform: translateY(-50%);
+    visibility: hidden;
+    transition: visibility 120ms ease-in-out;
+}
+
+.container .content form > small {
+    font-size: 15px;
+    color: var(--soft-red);
+    position: absolute;
+    left: 30px;
+    bottom: -22px;
+    visibility: hidden;
+    transition: visibility 120ms ease-in-out;
+}
+
+.container .content form.error input {
+    border: 3px solid var(--soft-red);
+}
+
+.container .content form.error .icon {
+    visibility: visible;
+}
+
+.container .content form.error small {
+    visibility: visible;
+}
+
+.container .image img {
+    width: 100%;
+    height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+footer .attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+footer .attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
