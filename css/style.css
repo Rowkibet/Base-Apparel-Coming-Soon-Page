@@ -14,73 +14,77 @@
 
 body {
     min-height: 100vh;
-    max-width: 1440px;
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 .container {
-    width: 100%;
-    height: 100%;
+    max-width: 1440px;
     display: grid;
-    grid-template-columns: 1fr 610px;
-    grid-template-rows: auto;
+    grid-template-columns: 1.36fr 1fr;
+    grid-template-rows: 800px;
+    position: relative;
 }
 
-.container .content {
+.content {
     background-image: url(../images/bg-pattern-desktop.svg), linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
     background-size: 100%;
     background-repeat: no-repeat;
-    padding: 65px 170px 0px 170px;
+    padding-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-container {
+    width: 59%;
     display: grid;
     grid-template-rows: auto 1fr;
 }
 
-.container .content .logo {
-    margin-bottom: 140px;
+.content .logo {
     padding-left: 10px;
 }
 
-.container .content .text {
-    padding-right: 65px;
+.content .text {
+    align-self: center;
+    justify-self: center;
+    padding-right: 34px;
 }
 
-.container .content .text h1 {
+.text h1 {
     margin-bottom: 20px;
     padding-left: 5px;
-    font-size: 50px;
+    font-size: 61px;
     text-transform: uppercase;
-    letter-spacing: 25px;
+    letter-spacing: 19px;
     line-height: 1.1;
     color: var(--dark-grayish-red);
 }
 
-.container .content .text h1 span {
+h1 span {
     font-weight: 300;
     color: var(--desaturated-red);
 }
 
-.container .content .text p {
-    min-width: 425px;
+.text p {
     margin-bottom: 40px;
     padding-right: 13px;
     padding-left: 5px;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.6;
     color: var(--desaturated-red);
 }
 
-.container .content form {
+.content form {
     height: 75px;
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.container .content form > input {
+form > input {
     background-color: transparent;
     border: 1px solid #DADCE0;
     border-radius: 40px;
@@ -93,13 +97,13 @@ body {
     transition: all 120ms ease-in-out;
 }
 
-.container .content form > button {
+form > button {
     min-width: 100px;
     padding: 18px;
     background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
     border: none;
     border-radius: 40px;
-    box-shadow: 0px 15px 15px rgba(206, 151, 151, 0.4);
+    box-shadow: 0px 15px 15px rgba(206, 151, 151, 0.3);
     outline: none;
     cursor: pointer;
     position: absolute;
@@ -110,14 +114,13 @@ body {
     transition: all 50ms ease-in-out;
 }
 
-.container .content form > button:hover {
+form > button:hover {
     background-image: linear-gradient(135deg, hsl(0, 71%, 93%), hsl(0, 80%, 86%));
     box-shadow: 0px 15px 20px rgba(206, 151, 151, 0.7);
     transform: translateY(-50%) scale(1.05);
-    /* right: 2px; */
 }
 
-.container .content form .icon {
+form .icon {
     position: absolute;
     top: 50%;
     right: 120px;
@@ -126,7 +129,7 @@ body {
     transition: visibility 120ms ease-in-out;
 }
 
-.container .content form > small {
+form > small {
     font-size: 15px;
     color: var(--soft-red);
     position: absolute;
@@ -136,33 +139,125 @@ body {
     transition: visibility 120ms ease-in-out;
 }
 
-.container .content form.error input {
+form.error input {
     border: 3px solid var(--soft-red);
 }
 
-.container .content form.error .icon {
+form.error .icon {
     visibility: visible;
 }
 
-.container .content form.error small {
+form.error small {
     visibility: visible;
 }
 
-.container .image img {
-    width: 100%;
-    height: 100%;
+.container .image {
+    background-image:url('../images/hero-desktop.jpg');
+    background-size: cover;
+    background-position: center center;
 }
 
 footer {
     position: absolute;
     bottom: 0;
+    left: 27%;
+    transform: translateX(-50%);
 }
 
-footer .attribution { 
-    font-size: 11px; 
+.attribution { 
+    font-size: 13px; 
     text-align: center; 
 }
 
-footer .attribution a { 
+.attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (max-width: 1366px) {
+    .container {
+        grid-template-rows: 100vh;
+    }
+
+    .content .logo img {
+        width: 32%;
+    }
+
+    .text h1 {
+        margin-bottom: 15px;
+        font-size: 57px;
+        letter-spacing: 18px;
+    }
+
+    .text p {
+        margin-bottom: 25px;
+        font-size: 15px;
+    }
+
+    form > input {
+        padding: 18px 30px;
+        font-size: 13px;
+    }
+
+    form > button {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .content {
+        background-size: cover;
+    }
+
+    .inner-container {
+        width: 71%;
+    }
+
+    .content .logo {
+        margin-bottom: 0;
+    }
+
+    .content .text {
+        padding-right: 0;
+    }
+
+    .text h1 {
+        margin-bottom: 15px;
+        font-size: 54px;
+        letter-spacing: 16px;
+    }
+
+    .text p {
+        margin-bottom: 23px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .inner-container {
+        width: 90%;
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+
+    .content .text {
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    /* .container .image {
+        position: absolute;
+        left: 0;
+    } */
+
+    footer {
+        left: 50%;
+    }
 }
