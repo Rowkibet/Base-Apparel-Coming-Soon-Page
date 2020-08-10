@@ -162,7 +162,7 @@ form.error small {
 .container .image {
     background-image:url('../images/hero-desktop.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center top;
 }
 
 footer {
