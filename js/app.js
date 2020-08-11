@@ -11,21 +11,14 @@ function validateData() {
     const emailValue = email.value.trim();
 
     if(emailValue === '') {
-        setErrorFor(email, "Email cannot be empty");
-    } else if (!isEmail(emailValue)) {
-        setErrorFor(email, "Please provide a valid email");
+        form.classList.add('error');
+        small.textContent = "Email cannot be empty";
+    } else if (!isEmail(emailValue)) {     
+        form.classList.add('error');
+        small.textContent = "Please provide a valid email";
     } else {
-        setSuccessFor(email);
+        form.classList.remove('error');
     }
-}
-
-function setErrorFor(input, message) {
-    form.classList.add('error');
-    small.textContent = message;
-}
-
-function setSuccessFor(input) {
-    form.classList.remove('error');
 }
 
 function isEmail(email) {
